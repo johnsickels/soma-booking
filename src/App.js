@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import RoomCard from './components/RoomCard.js';
-import BookingForm from './components/BookingForm.js';
+import React, { useState } from "react";
+import RoomCard from "./components/RoomCard.js";
+import BookingForm from "./components/BookingForm.js";
 
 function App() {
   // set intial state
@@ -16,16 +16,6 @@ function App() {
   const [rooms, setRooms] = useState(initRooms);
   const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ roomNumber: 1 });
-
-  // helper function
-  const findUserNameById = (id) => {
-    console.log(id);
-    console.log(users);
-    const foundUser = users.find((user) => user.id === parseInt(id));
-    if (foundUser) {
-      return foundUser.name;
-    }
-  };
 
   // event handler
   const handleFormSubmit = () => {
