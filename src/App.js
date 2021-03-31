@@ -18,8 +18,17 @@ function App() {
   const [form, setForm] = useState({ numberOfOccupants: 1, roomNumber: 1 });
 
   // event handler
-  const handleFormSubmit = () => {
+  const bookRoom = (event) => {
+    event.preventDefault();
     // add user to state
+    if (!form.name) {
+      alert("Please enter a name!");
+      return;
+    }
+    if (!form.phone) {
+      alert("Please enter a phone number!");
+      return;
+    }
     const newUser = {
       id: parseInt(form.phone),
       name: form.name,
@@ -29,12 +38,24 @@ function App() {
     // update room by id
     const roomsCopy = [...rooms];
     const userRoom = roomsCopy.find(
-      (room) => room.id === parseInt(form.roomNumber)
+      (room) => room.id === parseInt(event.target.id)
     );
     if (!userRoom) return;
     userRoom.occupants = form.numberOfOccupants;
     userRoom.user = form.name;
-    console.log(userRoom);
+    setRooms(roomsCopy);
+  };
+
+  const emptyRoom = (event) => {
+    // console.log({ roomId });
+    const roomId = event.target.id;
+    console.log({ roomId });
+    const roomsCopy = [...rooms];
+    const userRoom = roomsCopy.find(
+      (room) => room.id === parseInt(event.target.id)
+    );
+    delete userRoom.user;
+    userRoom.occupants = 0;
     setRooms(roomsCopy);
   };
 
@@ -45,19 +66,22 @@ function App() {
         <p className="lead">Book with ease.</p>
       </div>
       <div className="container mb-5">
-        <BookingForm form={form} setForm={setForm} rooms={rooms} />
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={handleFormSubmit}
-        >
-          BOOK
-        </button>
+        <BookingForm
+          form={form}
+          setForm={setForm}
+          rooms={rooms}
+          // handleFormSubmit={handleFormSubmit}
+        />
         <hr></hr>
         <h2>Rooms</h2>
         <div className="card-deck">
           {rooms.map((room, idx) => (
-            <RoomCard key={idx} room={room} />
+            <RoomCard
+              key={idx}
+              room={room}
+              bookRoom={bookRoom}
+              emptyRoom={emptyRoom}
+            />
           ))}
         </div>
       </div>
