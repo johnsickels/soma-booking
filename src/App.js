@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RoomCard from "./components/RoomCard.js";
-import BookingForm from "./components/BookingForm.js";
+import BookingForm from "./components/BookingForm/index.js";
 
 function App() {
   // set intial state
@@ -15,7 +15,7 @@ function App() {
   // state
   const [rooms, setRooms] = useState(initRooms);
   const [users, setUsers] = useState([]);
-  const [form, setForm] = useState({ roomNumber: 1 });
+  const [form, setForm] = useState({ numberOfOccupants: 1, roomNumber: 1 });
 
   // event handler
   const handleFormSubmit = () => {
