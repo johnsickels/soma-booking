@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import RoomCard from "./components/RoomCard.js";
-import BookingForm from "./components/BookingForm/index.js";
+import BookingForm from "./components/BookingForm";
 
 function App() {
   // set intial state
@@ -17,7 +17,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ numberOfOccupants: 1, roomNumber: 1 });
 
-  // event handler
+  // event handlers
   const bookRoom = (event) => {
     event.preventDefault();
     // add user to state
@@ -47,9 +47,6 @@ function App() {
   };
 
   const emptyRoom = (event) => {
-    // console.log({ roomId });
-    const roomId = event.target.id;
-    console.log({ roomId });
     const roomsCopy = [...rooms];
     const userRoom = roomsCopy.find(
       (room) => room.id === parseInt(event.target.id)
@@ -66,12 +63,7 @@ function App() {
         <p className="lead">Book with ease.</p>
       </div>
       <div className="container mb-5">
-        <BookingForm
-          form={form}
-          setForm={setForm}
-          rooms={rooms}
-          // handleFormSubmit={handleFormSubmit}
-        />
+        <BookingForm form={form} setForm={setForm} rooms={rooms} />
         <hr></hr>
         <h2>Rooms</h2>
         <div className="card-deck">
