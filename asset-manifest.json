@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/soma-booking/static/js/main.e40c286c.chunk.js",
+    "main.js.map": "/soma-booking/static/js/main.e40c286c.chunk.js.map",
+    "runtime-main.js": "/soma-booking/static/js/runtime-main.883f43ac.js",
+    "runtime-main.js.map": "/soma-booking/static/js/runtime-main.883f43ac.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/soma-booking/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.97c783ec.chunk.js": "/soma-booking/static/js/2.97c783ec.chunk.js",
+    "static/js/2.97c783ec.chunk.js.map": "/soma-booking/static/js/2.97c783ec.chunk.js.map",
+    "index.html": "/soma-booking/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/soma-booking/static/css/2.4c97ca4f.chunk.css.map",
+    "static/js/2.97c783ec.chunk.js.LICENSE.txt": "/soma-booking/static/js/2.97c783ec.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.883f43ac.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.97c783ec.chunk.js",
+    "static/js/main.e40c286c.chunk.js"
+  ]
+}
