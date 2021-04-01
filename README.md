@@ -1,4 +1,6 @@
-# Booking Rooms
+# SOMA Booking
+
+![Tests](https://github.com/johnsickels/soma-booking/actions/workflows/node.js.yml/badge.svg)
 
 ## Installation
 ```bash
