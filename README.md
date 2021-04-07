@@ -1,7 +1,7 @@
 # SOMA Booking
 
 ![Tests](https://github.com/johnsickels/soma-booking/actions/workflows/node.js.yml/badge.svg)
-![Coverage](./coverage/badge-lines.svg)
+[![codecov](https://codecov.io/gh/johnsickels/soma-booking/branch/main/graph/badge.svg?token=Rqmo58Avia)](https://codecov.io/gh/johnsickels/soma-booking)
 
 ## Installation
 ```bash
